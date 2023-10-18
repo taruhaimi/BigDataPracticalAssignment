@@ -1,0 +1,3 @@
+# .gitignore
+WorkoutData_2017to2020/
+__pycache__/
