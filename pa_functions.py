@@ -35,3 +35,11 @@ def plot_weekday_data(data):
     ax.legend(title='Sports',loc='upper left', bbox_to_anchor=(1, 1))
     ax.set_xticklabels(weekdays)
     plt.show()
+
+def plot_season_data(data):
+    seasons = ["Winter","Spring","Summer","Autumn"]
+    ax = data.plot(x='season', kind='bar', stacked=True,
+        title='Season vs. Sports')
+    ax.legend(title='Sports',loc='upper left', bbox_to_anchor=(1, 1))
+    ax.set_xticklabels(seasons)
+    plt.show()
