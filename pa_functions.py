@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 def read_file_to_df(filename):
     data = pd.read_json(filename, typ='series')
@@ -26,3 +27,11 @@ def read_file_to_df(filename):
     df = pd.DataFrame(dictionary, index = [0])
 
     return df
+
+def plot_weekday_data(data):
+    weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    ax = data.plot(x='weekday', kind='bar', stacked=True,
+        title='Weekday vs. Sports')
+    ax.legend(title='Sports',loc='upper left', bbox_to_anchor=(1, 1))
+    ax.set_xticklabels(weekdays)
+    plt.show()
